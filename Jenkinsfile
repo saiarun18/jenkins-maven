@@ -6,5 +6,11 @@ pipeline {
                git 'https://github.com/saiarun18/jenkins-maven.git'
             }
         }
+        stage('Compile and Clean') { 
+            steps {
+
+                sh "mvn clean compile"
+            }
+        }
     }
 }
