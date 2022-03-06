@@ -12,5 +12,10 @@ pipeline {
                 sh "mvn package"
             }
         }
+        stage('Build Docker image'){
+            steps {
+                sh 'docker build -t arun1801docker/docker_jenkins_pipeline:${BUILD_NUMBER} .'
+            }
+        }
     }
 }
