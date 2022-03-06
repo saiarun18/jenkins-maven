@@ -22,9 +22,8 @@ pipeline {
                  withCredentials([string(credentialsId: 'DockerId5', variable: 'Dockerpwd')]) {
                           sh "docker login -u arun1801docker -p ${Dockerpwd}"
                  }
-                }
-            }                
-        }
+            }
+        }           
         stage('Docker Push'){
             steps {
                 sh 'docker push arun1801docker/docker_jenkins_pipeline:${BUILD_NUMBER}'
